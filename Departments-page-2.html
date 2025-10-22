@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Departments - NPI University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      /* Style for the custom select arrow */
+      .select-wrapper {
+        position: relative;
+      }
+      .select-wrapper select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding-right: 2.5rem; /* Space for arrow */
+      }
+      .select-arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        padding-right: 0.75rem;
+        pointer-events: none;
+      }
+
+      /* Added for responsive dropdown text */
+      .responsive-select {
+        font-size: 1rem; /* 16px default */
+      }
+      @media (max-width: 640px) {
+        /* Tailwind's 'sm' breakpoint */
+        .responsive-select {
+          font-size: 0.875rem; /* 14px for mobile */
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Page Header -->
+    <header class="relative bg-[#054d94]/10">
+      <!-- Adjusted padding and text size for mobile -->
+      <div class="container mx-auto px-6 py-12 md:py-20 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#054d94]">
+          Our Departments
+        </h1>
+        <p class="text-gray-700 mt-3 text-lg max-w-2xl mx-auto">
+          Explore NPIUB's diverse academic departments — fostering innovation
+          and real-world learning.
+        </p>
+      </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="container mx-auto px-6 py-8">
+      <!-- Centered flex container for medium screens and up -->
+      <div
+        class="flex flex-col md:flex-row gap-4 md:items-center md:justify-center"
+      >
+        <h3 class="text-lg font-semibold text-gray-700">Filter by:</h3>
+
+        <!-- Faculty Filter -->
+        <div class="select-wrapper w-full md:w-80">
+          <!-- Added responsive-select class -->
+          <select
+            id="faculty-filter"
+            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] responsive-select"
+          >
+            <option value="all">All Faculties</option>
+            <option value="engineering">Faculty of Engineering</option>
+            <option value="business">Faculty of Business Studies</option>
+            <option value="arts">Faculty of Arts & Social Science</option>
+          </select>
+          <div class="select-arrow">
+            <svg
+              class="w-5 h-5 text-gray-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Department Filter -->
+        <div class="select-wrapper w-full md:w-80">
+          <!-- Added responsive-select class -->
+          <select
+            id="department-filter"
+            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed responsive-select"
+            disabled
+          >
+            <option value="all">All Departments</option>
+          </select>
+          <div class="select-arrow">
+            <svg
+              class="w-5 h-5 text-gray-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Go Button -->
+        <button
+          id="filter-go-button"
+          class="w-full md:w-auto bg-transparent border-2 border-[#054d94] text-[#054d94] hover:bg-[#054d94] hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
+        >
+          Go
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Content: Departments Grid Removed -->
+
+    <!-- Script Added Back -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const facultyFilter = document.getElementById("faculty-filter");
+        const deptFilter = document.getElementById("department-filter");
+
+        // Define Department Data
+        // Reverted to full names
+        const departmentsByFaculty = {
+          all: ["All Departments"],
+          engineering: [
+            "All Departments",
+            "Computer Science & Engineering",
+            "Electrical & Electronic Engineering",
+            "Food Engineering",
+          ],
+          business: [
+            "All Departments",
+            "Bachelor of Business Administration",
+            "Master of Business Administration",
+          ],
+          arts: ["All Departments", "Bachelor of English"],
+        };
+
+        // Function to populate Department Dropdown
+        function populateDepartments(faculty) {
+          const departments = departmentsByFaculty[faculty] || [
+            "All Departments",
+          ];
+
+          // Clear current options
+          deptFilter.innerHTML = "";
+
+          // Add new options
+          departments.forEach((dept) => {
+            const option = document.createElement("option");
+            option.value =
+              dept === "All Departments"
+                ? "all"
+                : dept.toLowerCase().replace(/ & /g, " ").replace(/ /g, "-"); // Create a value like 'computer-science-engineering'
+            option.textContent = dept;
+            deptFilter.appendChild(option);
+          });
+          // Enable or disable the dropdown
+          // It's enabled if any faculty *other than* 'all' is selected.
+          deptFilter.disabled = faculty === "all";
+        }
+
+        // Add Event Listener to Faculty Filter
+        facultyFilter.addEventListener("change", () => {
+          const selectedFaculty = facultyFilter.value;
+          populateDepartments(selectedFaculty);
+        });
+
+        // Initial setup
+        populateDepartments("all"); // Initialize with 'all'
+      });
+    </script>
+  </body>
+</html>
