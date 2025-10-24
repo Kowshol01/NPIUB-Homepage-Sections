@@ -38,6 +38,7 @@
             <img
               src="md-shamsur-rahman.jpeg"
               alt="Chairman"
+              loading="lazy"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
             />
             <h3 class="text-xl font-semibold text-gray-900">
@@ -66,6 +67,7 @@
             <img
               src="https://placehold.co/176x176/EBF4FF/054d94?text=VC"
               alt="Vice Chancellor"
+              loading="lazy"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
             />
             <h3 class="text-xl font-semibold text-gray-900">
@@ -103,64 +105,33 @@
           <div class="inline-block w-20 h-1 bg-[#054d94] rounded mt-4"></div>
         </div>
 
-        <!-- Faculties Card Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Card 1: Faculty of Engineering -->
+        <!-- Filter Section -->
+        <div class="container mx-auto px-6 py-8">
           <div
-            class="group bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-8 text-center flex flex-col h-full"
+            aria-labelledby="filter-label"
+            class="flex flex-col md:flex-row gap-4 md:items-center md:justify-center"
           >
-            <div class="flex-grow">
-              <div
-                class="flex items-center justify-center h-20 w-20 rounded-full bg-blue-100 mx-auto group-hover:bg-[#054d94] transition-colors duration-300"
-              >
-                <!-- SVG Icon for Engineering --><svg
-                  class="h-10 w-10 text-[#054d94] group-hover:text-white transition-colors duration-300"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mt-6">
-                Faculty of Engineering
-              </h3>
-              <p class="text-gray-500 mt-2">
-                Pioneering innovation in technology, research, and modern
-                engineering solutions.
-              </p>
-            </div>
-            <a
-              href="Departments-page-2.html"
-              aria-label="View Faculty of Engineering Departments"
-              class="mt-6 inline-block text-[#054d94] font-semibold hover:text-[#055eb5]"
-            >
-              View Departments &rarr;
-            </a>
-          </div>
+            <h3 id="filter-label" class="text-lg font-semibold text-gray-700">
+              Filter by:
+            </h3>
 
-          <!-- Card 2: Faculty of Business Studies -->
-          <div
-            class="group bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-8 text-center flex flex-col h-full"
-          >
-            <div class="flex-grow">
-              <div
-                class="flex items-center justify-center h-20 w-20 rounded-full bg-blue-100 mx-auto group-hover:bg-[#054d94] transition-colors duration-300"
+            <!-- Faculty Filter -->
+            <div class="relative w-full md:w-80">
+              <label for="faculty-filter" class="sr-only">Faculty</label>
+              <select
+                id="faculty-filter"
+                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none pr-10 text-sm sm:text-base"
               >
-                <!-- SVG Icon for Business --><svg
-                  class="h-10 w-10 text-[#054d94] group-hover:text-white transition-colors duration-300"
+                <option value="all">All Faculties</option>
+                <option value="engineering">Faculty of Engineering</option>
+                <option value="business">Faculty of Business Studies</option>
+                <option value="arts">Faculty of Arts & Social Science</option>
+              </select>
+              <div
+                class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -170,37 +141,27 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M9 17v-4m3 4v-2m3 2v-6M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    d="M19 9l-7 7-7-7"
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mt-6">
-                Faculty of Business Studies
-              </h3>
-              <p class="text-gray-500 mt-2">
-                Shaping the next generation of business leaders and
-                entrepreneurs.
-              </p>
             </div>
-            <a
-              href="Departments-page-2.html"
-              aria-label="View Faculty of Business Studies Departments"
-              class="mt-6 inline-block text-[#054d94] font-semibold hover:text-[#055eb5]"
-            >
-              View Departments &rarr;
-            </a>
-          </div>
 
-          <!-- Card 3: Faculty of Arts & Social Science -->
-          <div
-            class="group bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-8 text-center flex flex-col h-full"
-          >
-            <div class="flex-grow">
-              <div
-                class="flex items-center justify-center h-20 w-20 rounded-full bg-blue-100 mx-auto group-hover:bg-[#054d94] transition-colors duration-300"
+            <!-- Department Filter -->
+            <div class="relative w-full md:w-80">
+              <label for="department-filter" class="sr-only">Department</label>
+              <select
+                id="department-filter"
+                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none pr-10 text-sm sm:text-base"
+                disabled
               >
-                <!-- SVG Icon for Arts & Social Science --><svg
-                  class="h-10 w-10 text-[#054d94] group-hover:text-white transition-colors duration-300"
+                <option value="all">All Departments</option>
+              </select>
+              <div
+                class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -210,28 +171,76 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    d="M19 9l-7 7-7-7"
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mt-6">
-                Faculty of Arts & Social Science
-              </h3>
-              <p class="text-gray-500 mt-2">
-                Exploring human culture, society, and creativity to understand
-                our world.
-              </p>
             </div>
-            <a
-              href="Departments-page-2.html"
-              aria-label="View Faculty of Arts and Social Science Departments"
-              class="mt-6 inline-block text-[#054d94] font-semibold hover:text-[#055eb5]"
+
+            <!-- Go Button -->
+            <button
+              id="filter-go-button"
+              class="w-full md:w-auto bg-transparent border-2 border-[#054d94] text-[#054d94] hover:bg-[#054d94] hover:text-white font-semibold px-8 py-2.5 rounded-lg transition-colors duration-300"
             >
-              View Departments &rarr;
-            </a>
+              Go
+            </button>
           </div>
         </div>
       </div>
     </section>
+    <script>
+      (() => {
+        "use strict";
+        document.addEventListener("DOMContentLoaded", () => {
+          const facultyFilter = document.getElementById("faculty-filter");
+          const deptFilter = document.getElementById("department-filter");
+
+          const departmentsByFaculty = {
+            all: ["All Departments"],
+            engineering: [
+              "All Departments",
+              "Computer Science & Engineering",
+              "Electrical & Electronic Engineering",
+              "Food Engineering",
+            ],
+            business: [
+              "All Departments",
+              "Bachelor of Business Administration",
+              "Master of Business Administration",
+            ],
+            arts: ["All Departments", "Bachelor of English"],
+          };
+
+          function populateDepartments(faculty) {
+            const departments = departmentsByFaculty[faculty] || [
+              "All Departments",
+            ];
+
+            deptFilter.innerHTML = "";
+
+            departments.forEach((dept) => {
+              const option = document.createElement("option");
+              option.value =
+                dept === "All Departments"
+                  ? "all"
+                  : dept.toLowerCase().replace(/ & /g, " ").replace(/ /g, "-");
+              option.textContent = dept;
+              deptFilter.appendChild(option);
+            });
+
+            deptFilter.disabled = faculty === "all";
+          }
+
+          facultyFilter.addEventListener("change", () => {
+            const selectedFaculty = facultyFilter.value;
+            populateDepartments(selectedFaculty);
+          });
+
+          if (!facultyFilter || !deptFilter) return;
+
+          populateDepartments("all");
+        });
+      })();
+    </script>
   </body>
 </html>
