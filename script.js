@@ -49,7 +49,6 @@
       placeholderOption.textContent = "Select Department";
       placeholderOption.disabled = true;
       placeholderOption.selected = true;
-      placeholderOption.hidden = true; // Hide from dropdown list
       deptFilterElement.appendChild(placeholderOption);
 
       // Add other departments
