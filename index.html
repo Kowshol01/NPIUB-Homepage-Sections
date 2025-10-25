@@ -38,7 +38,7 @@
             <img
               src="md-shamsur-rahman.jpeg"
               alt="Chairman"
-              class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"        
+              class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Md. Shamsur Rahman
@@ -67,7 +67,6 @@
               src="https://placehold.co/176x176/EBF4FF/054d94?text=VC"
               alt="Vice Chancellor"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
-              onerror="this.src='https://placehold.co/176x176/EBF4FF/054d94?text=Image'"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Prof. [Vice Chancellor Name]
@@ -126,11 +125,9 @@
                   >
                   <select
                     id="faculty-filter-desktop"
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors pr-10"
                   >
-                    <option value="" disabled selected hidden>
-                      Select Faculty
-                    </option>
+                    <option value="" disabled selected>Select Faculty</option>
                     <option value="engineering">Faculty of Engineering</option>
                     <option value="business">
                       Faculty of Business Studies
@@ -139,6 +136,24 @@
                       Faculty of Arts & Social Science
                     </option>
                   </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+                  >
+                    <svg
+                      class="w-5 h-5 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
                 </div>
                 <p
                   id="faculty-error-desktop"
@@ -155,13 +170,29 @@
                 >
                 <select
                   id="department-filter-desktop"
-                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base pr-10"
                   disabled
                 >
-                  <option value="" disabled selected hidden>
-                    Select Department
-                  </option>
+                  <option value="" disabled selected>Select Department</option>
                 </select>
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+                >
+                  <svg
+                    class="w-5 h-5 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
                 <p
                   id="department-error-desktop"
                   class="absolute text-red-600 text-sm mt-1 hidden"
@@ -198,11 +229,9 @@
                   >
                   <select
                     id="faculty-filter-mobile"
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors pr-10"
                   >
-                    <option value="" disabled selected hidden>
-                      Select Faculty
-                    </option>
+                    <option value="" disabled selected>Select Faculty</option>
                     <option value="engineering">Faculty of Engineering</option>
                     <option value="business">
                       Faculty of Business Studies
@@ -211,6 +240,24 @@
                       Faculty of Arts & Social Science
                     </option>
                   </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+                  >
+                    <svg
+                      class="w-5 h-5 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
                 </div>
                 <p
                   id="faculty-error-mobile"
@@ -227,13 +274,29 @@
                 >
                 <select
                   id="department-filter-mobile"
-                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base pr-10"
                   disabled
                 >
-                  <option value="" disabled selected hidden>
-                    Select Department
-                  </option>
+                  <option value="" disabled selected>Select Department</option>
                 </select>
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+                >
+                  <svg
+                    class="w-5 h-5 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
                 <p
                   id="department-error-mobile"
                   class="text-red-600 text-sm mt-1 hidden"
@@ -254,7 +317,7 @@
         </div>
       </div>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>
-
