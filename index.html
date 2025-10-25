@@ -13,6 +13,19 @@
       body {
         font-family: "Inter", sans-serif;
       }
+      /* This CSS forces a custom dropdown arrow and prevents the 
+        native mobile UI (with the dots) from appearing.
+      */
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.75rem center;
+        background-repeat: no-repeat;
+        background-size: 1.25em 1.25em;
+        padding-right: 2.5rem; /* Replaces pr-10 */
+      }
     </style>
   </head>
   <body class="bg-gray-50">
@@ -39,6 +52,7 @@
               src="md-shamsur-rahman.jpeg"
               alt="Chairman"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
+              onerror="this.src='https://placehold.co/176x176/EBF4FF/054d94?text=Image'"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Md. Shamsur Rahman
@@ -67,6 +81,7 @@
               src="https://placehold.co/176x176/EBF4FF/054d94?text=VC"
               alt="Vice Chancellor"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
+              onerror="this.src='https://placehold.co/176x176/EBF4FF/054d94?text=Image'"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Prof. [Vice Chancellor Name]
@@ -125,7 +140,7 @@
                   >
                   <select
                     id="faculty-filter-desktop"
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors pr-10"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer text-sm sm:text-base transition-colors"
                   >
                     <option value="" disabled selected>Select Faculty</option>
                     <option value="engineering">Faculty of Engineering</option>
@@ -136,24 +151,7 @@
                       Faculty of Arts & Social Science
                     </option>
                   </select>
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
-                  >
-                    <svg
-                      class="w-5 h-5 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
+                  <!-- Arrow icon is now handled by CSS -->
                 </div>
                 <p
                   id="faculty-error-desktop"
@@ -170,29 +168,12 @@
                 >
                 <select
                   id="department-filter-desktop"
-                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base pr-10"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer text-sm sm:text-base"
                   disabled
                 >
                   <option value="" disabled selected>Select Department</option>
                 </select>
-                <div
-                  class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
-                >
-                  <svg
-                    class="w-5 h-5 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
+                <!-- Arrow icon is now handled by CSS -->
                 <p
                   id="department-error-desktop"
                   class="absolute text-red-600 text-sm mt-1 hidden"
@@ -229,7 +210,7 @@
                   >
                   <select
                     id="faculty-filter-mobile"
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors pr-10"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer text-sm sm:text-base transition-colors"
                   >
                     <option value="" disabled selected>Select Faculty</option>
                     <option value="engineering">Faculty of Engineering</option>
@@ -240,24 +221,7 @@
                       Faculty of Arts & Social Science
                     </option>
                   </select>
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
-                  >
-                    <svg
-                      class="w-5 h-5 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
+                  <!-- Arrow icon is now handled by CSS -->
                 </div>
                 <p
                   id="faculty-error-mobile"
@@ -274,29 +238,12 @@
                 >
                 <select
                   id="department-filter-mobile"
-                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base pr-10"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer text-sm sm:text-base"
                   disabled
                 >
                   <option value="" disabled selected>Select Department</option>
                 </select>
-                <div
-                  class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
-                >
-                  <svg
-                    class="w-5 h-5 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
+                <!-- Arrow icon is now handled by CSS -->
                 <p
                   id="department-error-mobile"
                   class="text-red-600 text-sm mt-1 hidden"
