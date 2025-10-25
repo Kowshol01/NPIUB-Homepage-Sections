@@ -39,6 +39,7 @@
               src="md-shamsur-rahman.jpeg"
               alt="Chairman"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
+              onerror="this.src='https://placehold.co/176x176/EBF4FF/054d94?text=Image'"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Md. Shamsur Rahman
@@ -67,6 +68,7 @@
               src="https://placehold.co/176x176/EBF4FF/054d94?text=VC"
               alt="Vice Chancellor"
               class="w-44 h-44 align-middle rounded-full mb-6 border-4 border-[#054d94]"
+              onerror="this.src='https://placehold.co/176x176/EBF4FF/054d94?text=Image'"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Prof. [Vice Chancellor Name]
@@ -105,7 +107,7 @@
 
         <!-- Filter Section -->
         <div class="container mx-auto px-6 py-8">
-          <!-- DESKTOP FILTER -->
+          <!-- Desktop Filter -->
           <div class="hidden md:block" aria-labelledby="filter-label-desktop">
             <div
               class="flex flex-col md:flex-row gap-4 md:items-center md:justify-center"
@@ -125,9 +127,11 @@
                   >
                   <select
                     id="faculty-filter-desktop"
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none pr-10 text-sm sm:text-base transition-colors"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors"
                   >
-                    <option value="all">Select Faculty</option>
+                    <option value="" disabled selected hidden>
+                      Select Faculty
+                    </option>
                     <option value="engineering">Faculty of Engineering</option>
                     <option value="business">
                       Faculty of Business Studies
@@ -136,24 +140,6 @@
                       Faculty of Arts & Social Science
                     </option>
                   </select>
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
-                  >
-                    <svg
-                      class="w-5 h-5 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
                 </div>
                 <p
                   id="faculty-error-desktop"
@@ -170,29 +156,19 @@
                 >
                 <select
                   id="department-filter-desktop"
-                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none pr-10 text-sm sm:text-base"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base"
                   disabled
                 >
-                  <option value="all">Select Department</option>
+                  <option value="" disabled selected hidden>
+                    Select Department
+                  </option>
                 </select>
-                <div
-                  class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+                <p
+                  id="department-error-desktop"
+                  class="absolute text-red-600 text-sm mt-1 hidden"
                 >
-                  <svg
-                    class="w-5 h-5 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
+                  Please select Department
+                </p>
               </div>
 
               <!-- Go Button (Desktop) -->
@@ -205,7 +181,7 @@
             </div>
           </div>
 
-          <!-- MOBILE FILTER -->
+          <!-- Mobile Filter -->
           <div class="block md:hidden" aria-labelledby="filter-label-mobile">
             <div class="flex flex-col space-y-4 items-stretch">
               <h3
@@ -223,9 +199,11 @@
                   >
                   <select
                     id="faculty-filter-mobile"
-                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none pr-10 text-sm sm:text-base transition-colors"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] cursor-pointer appearance-none text-sm sm:text-base transition-colors"
                   >
-                    <option value="all">Select Faculty</option>
+                    <option value="" disabled selected hidden>
+                      Select Faculty
+                    </option>
                     <option value="engineering">Faculty of Engineering</option>
                     <option value="business">
                       Faculty of Business Studies
@@ -234,24 +212,6 @@
                       Faculty of Arts & Social Science
                     </option>
                   </select>
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
-                  >
-                    <svg
-                      class="w-5 h-5 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
                 </div>
                 <p
                   id="faculty-error-mobile"
@@ -268,29 +228,19 @@
                 >
                 <select
                   id="department-filter-mobile"
-                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none pr-10 text-sm sm:text-base"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#054d94] disabled:bg-gray-100 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer appearance-none text-sm sm:text-base"
                   disabled
                 >
-                  <option value="all">Select Department</option>
+                  <option value="" disabled selected hidden>
+                    Select Department
+                  </option>
                 </select>
-                <div
-                  class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none"
+                <p
+                  id="department-error-mobile"
+                  class="text-red-600 text-sm mt-1 hidden"
                 >
-                  <svg
-                    class="w-5 h-5 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
+                  Please select Department
+                </p>
               </div>
 
               <!-- Go Button (Mobile) -->
@@ -305,164 +255,6 @@
         </div>
       </div>
     </section>
-    <script>
-      (() => {
-        "use strict";
-        document.addEventListener("DOMContentLoaded", () => {
-          // Get elements for both desktop and mobile
-          const facultyFilterDesktop = document.getElementById(
-            "faculty-filter-desktop"
-          );
-          const deptFilterDesktop = document.getElementById(
-            "department-filter-desktop"
-          );
-          const goButtonDesktop = document.getElementById(
-            "filter-go-button-desktop"
-          );
-          const errorDesktop = document.getElementById("faculty-error-desktop");
-
-          const facultyFilterMobile = document.getElementById(
-            "faculty-filter-mobile"
-          );
-          const deptFilterMobile = document.getElementById(
-            "department-filter-mobile"
-          );
-          const goButtonMobile = document.getElementById(
-            "filter-go-button-mobile"
-          );
-          const errorMobile = document.getElementById("faculty-error-mobile");
-
-          const departmentsByFaculty = {
-            all: ["Select Department"],
-            engineering: [
-              "Select Department",
-              "Computer Science & Engineering",
-              "Electrical & Electronic Engineering",
-              "Food Engineering",
-            ],
-            business: [
-              "Select Department",
-              "Bachelor of Business Administration",
-              "Master of Business Administration",
-            ],
-            arts: ["Select Department", "Bachelor of English"],
-          };
-
-          // Reusable function to populate department dropdown
-          function populateDepartments(faculty, deptFilterElement) {
-            const departments = departmentsByFaculty[faculty] || [
-              "Select Department",
-            ];
-            deptFilterElement.innerHTML = "";
-
-            departments.forEach((dept) => {
-              const option = document.createElement("option");
-              option.value =
-                dept === "Select Department"
-                  ? "all"
-                  : dept.toLowerCase().replace(/ & /g, " ").replace(/ /g, "-");
-              option.textContent = dept;
-              deptFilterElement.appendChild(option);
-            });
-
-            deptFilterElement.disabled = faculty === "all";
-          }
-
-          // Reusable function to reset error state
-          function resetFacultyError(facultyFilter, errorElement) {
-            if (errorElement.id === "faculty-error-desktop") {
-              errorElement.classList.add("hidden");
-            } else {
-              errorElement.classList.add("hidden");
-            }
-            facultyFilter.classList.remove(
-              "border-red-600",
-              "focus:ring-red-600"
-            );
-            facultyFilter.classList.add(
-              "border-gray-300",
-              "focus:ring-[#054d94]"
-            );
-          }
-
-          // Reusable function to handle "Go" click logic
-          function handleGoClick(facultyFilter, deptFilter, errorElement) {
-            const selectedFaculty = facultyFilter.value;
-            const selectedDept = deptFilter.value;
-
-            // Reset error state first
-            resetFacultyError(facultyFilter, errorElement);
-
-            if (selectedFaculty === "all") {
-              // Show error
-              if (errorElement.id === "faculty-error-desktop") {
-                errorElement.classList.remove("hidden");
-              } else {
-                errorElement.classList.remove("hidden");
-              }
-              facultyFilter.classList.remove(
-                "border-gray-300",
-                "focus:ring-[#054d94]"
-              );
-              facultyFilter.classList.add(
-                "border-red-600",
-                "focus:ring-red-600"
-              );
-              facultyFilter.focus();
-            } else {
-              // Proceed
-              console.log("Proceeding with:", selectedFaculty, selectedDept);
-              // You can add navigation logic here
-              // Example: window.location.href = `/faculty/${selectedFaculty}/${selectedDept}`;
-            }
-          }
-
-          // Null check for all elements
-          if (
-            !facultyFilterDesktop ||
-            !deptFilterDesktop ||
-            !goButtonDesktop ||
-            !errorDesktop ||
-            !facultyFilterMobile ||
-            !deptFilterMobile ||
-            !goButtonMobile ||
-            !errorMobile
-          ) {
-            console.error("Filter elements not found!");
-            return;
-          }
-
-          // --- Desktop Listeners ---
-          facultyFilterDesktop.addEventListener("change", () => {
-            resetFacultyError(facultyFilterDesktop, errorDesktop);
-            const selectedFaculty = facultyFilterDesktop.value;
-            populateDepartments(selectedFaculty, deptFilterDesktop);
-          });
-
-          goButtonDesktop.addEventListener("click", () => {
-            handleGoClick(
-              facultyFilterDesktop,
-              deptFilterDesktop,
-              errorDesktop
-            );
-          });
-
-          // --- Mobile Listeners ---
-          facultyFilterMobile.addEventListener("change", () => {
-            resetFacultyError(facultyFilterMobile, errorMobile);
-            const selectedFaculty = facultyFilterMobile.value;
-            populateDepartments(selectedFaculty, deptFilterMobile);
-          });
-
-          goButtonMobile.addEventListener("click", () => {
-            handleGoClick(facultyFilterMobile, deptFilterMobile, errorMobile);
-          });
-
-          // --- Initial Population ---
-          populateDepartments("all", deptFilterDesktop);
-          populateDepartments("all", deptFilterMobile);
-        });
-      })();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
